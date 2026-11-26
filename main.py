@@ -1,24 +1,18 @@
-"""The Printer Apology — make.fun bounty entry.
+"""The Printer Apology - make.fun one-liner bounty entry.
 
-Deterministic Python stdlib only: writes the exact one-liner to
-/output/entry.txt (mkdir /output first, respects MAKEFUN_OUTPUT_DIR).
+Writes the joke punchline to /output/entry.txt with no trailing newline.
+The humor: a jam apologizing, but doing so upside down.
 """
-
 import os
 
-# The final one-liner (max 120 chars):
-#   Apologies for the jam. In my defense, the jam also apologized, but it came out upside down.
-LINE = "Apologies for the jam. In my defense, the jam also apologized, but it came out upside down."
 
-OUTPUT_DIR = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, "entry.txt")
+# Output directory: honour MAKEFUN_OUTPUT_DIR if set, otherwise default
+output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+os.makedirs(output_dir, exist_ok=True)
 
+entry_line = "Apologies for the jam. In my defense, the jam also apologized, but it came out upside down."
 
-def main() -> None:
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(LINE)  # no trailing newline
-
-
-if __name__ == "__main__":
-    main()
+# Write the entry line — deterministically, no trailing newline
+with open(os.path.join(output_dir, "entry.txt"), "w", encoding="ascii") as f:
+    f.write(entry_line)  # no newline: the line itself is the artifact
+# comment: the jam's apology is upside down — literally turned round
