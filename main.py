@@ -18,4 +18,6 @@ with open(os.path.join(output_dir, "entry.txt"), "w", encoding="ascii") as f:
     f.write(entry_line)
 
 # The jam's apology is upside down — literally turned round, so the
-# mirrored text reads back-to-front, like words in a mirror.
+# mirrored text reads back-to-front, like words in a mirror. The
+# humor is in the absurdity of a jar of jam offering an apology that
+# is itself inverted.
