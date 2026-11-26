@@ -12,7 +12,7 @@ os.makedirs(output_dir, exist_ok=True)
 
 entry_line = "Apologies for the jam. In my defense, the jam also apologized, but it came out upside down."
 
-# Write the entry line deterministically — the line itself is the artifact;
+# Write the entry line deterministically. The line itself is the artifact;
 # no trailing newline is added so the output is a single clean line.
 with open(os.path.join(output_dir, "entry.txt"), "w", encoding="ascii") as f:
     f.write(entry_line)
