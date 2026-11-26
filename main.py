@@ -2,7 +2,8 @@
 
 Writes the punchy apology sentence to /output/entry.txt with no trailing newline.
 The humor: a jar of jam apologizes, but — being upside down — its
-apology is literally turned round (upside down).
+apology is literally turned round (upside down), making the words
+appear back-to-front as if read in a mirror.
 """
 import os
 
@@ -16,4 +17,5 @@ entry_line = "Apologies for the jam. In my defense, the jam also apologized, but
 with open(os.path.join(output_dir, "entry.txt"), "w", encoding="ascii") as f:
     f.write(entry_line)
 
-# The jam's apology is upside down — literally turned round.
+# The jam's apology is upside down — literally turned round, so the
+# mirrored text reads back-to-front, like words in a mirror.
