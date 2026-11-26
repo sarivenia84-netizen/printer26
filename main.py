@@ -13,6 +13,7 @@ os.makedirs(output_dir, exist_ok=True)
 entry_line = "Apologies for the jam. In my defense, the jam also apologized, but it came out upside down."
 
 # Write the entry line — deterministically, no trailing newline
+# The line itself is the artifact; no trailing newline is added
 with open(os.path.join(output_dir, "entry.txt"), "w", encoding="ascii") as f:
-    f.write(entry_line)  # no newline: the line itself is the artifact
-# comment: the jam's apology is upside down — literally turned round
+    f.write(entry_line)  # the line itself is the artifact, no newline
+# The jam's apology is upside down — literally turned round
